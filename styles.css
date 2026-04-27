@@ -2496,3 +2496,118 @@ font-size:16px;
 padding:6px 12px;
 font-size:18px;
 }
+
+/* =====================================
+🌍 TEMA TANZANIA / SAFARI (SOBRESCRIBE TODO)
+===================================== */
+
+/* 🎨 VARIABLES (si usas colores en otras partes) */
+:root{
+    --color-principal: #C97A40;   /* naranja safari */
+    --color-secundario: #8B5E3C;  /* marrón tierra */
+    --color-fondo: #F5E6D3;       /* arena */
+    --color-texto: #1E1E1E;
+}
+
+
+/* 🌍 FONDO GENERAL */
+body{
+    background-color: #F5E6D3 !important;
+    color: #1E1E1E !important;
+}
+
+
+/* 🟤 HEADER */
+header{
+    background: linear-gradient(90deg,#8B5E3C,#C97A40) !important;
+    color: white !important;
+}
+
+
+/* 🧭 MENÚ */
+nav{
+    background: #8B5E3C !important;
+}
+
+nav a{
+    color: #F5E6D3 !important;
+}
+
+nav a.activo{
+    color: #FFD700 !important;
+}
+
+
+/* 🟧 BOTONES */
+button{
+    background: #C97A40 !important;
+    color: white !important;
+    border: none !important;
+}
+
+button:hover{
+    background: #8B5E3C !important;
+}
+
+
+/* 🧱 TARJETAS */
+.info-card,
+.alojamiento,
+.dia,
+.precio-total,
+.vuelo-ida,
+.vuelo-vuelta{
+    background: #FFF8F0 !important;
+    border-left: 5px solid #C97A40 !important;
+    color: #1E1E1E !important;
+}
+
+
+/* ✈️ CONTADOR */
+.contador-verde{
+    background: #D2B48C !important;
+}
+
+.contador-naranja{
+    background: #C97A40 !important;
+}
+
+.contador-rojo{
+    background: #8B5E3C !important;
+}
+
+
+/* 📱 BARRA APP */
+.barra-app{
+    background: #8B5E3C !important;
+}
+
+.barra-app a{
+    color: #F5E6D3 !important;
+}
+
+
+/* 📦 CHECKLIST */
+.checklist-bali{
+    background: #FFF8F0 !important;
+}
+
+
+/* 🌀 ROLES */
+.roles-bali{
+    background: #F5E6D3 !important;
+}
+
+
+/* 🌅 HERO (PORTADA) */
+.hero-bali{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+                url("https://images.unsplash.com/photo-1516426122078-c23e76319801") center/cover no-repeat !important;
+    color: white !important;
+}
+
+
+/* 🌴 EFECTO MÁS PRO (TEXTURA ARENA) */
+body{
+    background-image: url("https://www.transparenttextures.com/patterns/sandpaper.png");
+}
