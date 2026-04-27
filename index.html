@@ -1,0 +1,2430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Itinerario de Viaje a Bali</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- 🎁 PANTALLA REGALO -->
+<!--
+<div id="pantallaRegalo">
+    <div class="portalMagico"></div>
+
+    <div class="contenido-regalo">
+        <h1>🎂 Feliz Cumpleaños Manuel 🎂</h1>
+        <div class="tarta">
+    <div class="vela"></div>
+    <div class="vela"></div>
+    <div class="vela"></div>
+</div>
+
+<p id="mensajeSopla">¿Qué es lo que harías para pedir un deseo?</p>
+        <p class="mensaje">
+            Tengo algo muy especial preparado para ti…
+            <br><br>
+            Pero primero tendrás que adivinar la contraseña 💭
+        </p>
+
+        <input type="password" id="inputClave" placeholder="Escribe la contraseña...">
+        <button id="btnEntrar">✨ Descubrir sorpresa</button>
+
+        <p id="errorClave"></p>
+
+        <audio id="musicaRegalo">
+            <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b1cfa42f4.mp3?filename=happy-birthday-112199.mp3">
+        </audio>
+
+        <p id="pistaExtra" style="display:none;"></p>
+    </div>
+</div>
+
+-->
+<!-- 🔒 CONTENIDO OCULTO HASTA CONTRASEÑA
+<div id="contenidoWeb" style="display:none;">-->
+    <!-- AQUÍ EMPIEZA TODA TU WEB EXACTAMENTE COMO LA TENÍAS -->
+    <!-- TÍTULO PRINCIPAL -->
+    <header>
+        <h1>🌴 Mi Itinerario de Viaje a Bali</h1>
+    </header>
+
+
+   <section class="hero-bali">
+
+    <h2>🐾 Bali Animalista 2026</h2>
+
+    <p class="frase">
+        Una aventura creada con respeto por la naturaleza, los animales y la esencia salvaje de Bali.
+    </p>
+
+    <div class="creditos">
+        <p class="autor">
+            🌿 Diseñado y creado por <strong>Borja</strong>
+        </p>
+
+        <p class="companeros">
+            🤍 En honor a quienes me acompañan en esta experiencia:
+            <span>Manuel</span> ·
+            <span>Nazaret</span> ·
+            <span>Martina</span>
+        </p>
+    </div>
+
+</section>
+    
+    
+<!-- ✈️ CUENTA ATRÁS VUELO -->
+<section class="contador-vuelo">
+    <h2>✈️ Cuenta atrás hacia Bali</h2>
+    <div class="zona-contador">
+    <p id="contador">Calculando tiempo restante...</p>
+    <span id="avion">✈️</span>
+</div>
+
+</section> 
+<section class="info-bali">
+
+<h2>🌴 Información en Bali</h2>
+
+<div class="info-grid">
+
+<div class="info-card">
+<h3>🌤 Clima en Bali</h3>
+<p id="climaBali">Cargando clima...</p>
+</div>
+
+<div class="info-card">
+<h3>🕒 Hora en Bali</h3>
+<p id="horaBali">Cargando hora...</p>
+</div>
+
+<div class="info-card">
+<h3>💰 Conversor € → Rupias</h3>
+
+<input type="number" id="euros" placeholder="Euros">
+
+<button onclick="convertir()">Convertir</button>
+
+<p id="resultadoRupias"></p>
+
+</div>
+
+</div>
+
+</section>
+<section id="mapa-bali">
+
+<h2>🗺️ Mapa del viaje en Bali</h2>
+
+<div class="contenedor-mapa">
+
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d505145.0138639879!2d115.092!3d-8.4095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d1d0bfa1bcd%3A0x5030bfbca8300b0!2sBali%2C%20Indonesia!5e0!3m2!1ses!2ses!4v1700000000000"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+</div>
+
+</section>
+    
+<section id="album-bali">
+
+<h2>📸 Álbum del viaje</h2>
+    
+<select id="diaFoto">
+<option value="dia17">Día 17</option>
+<option value="dia18">Día 18</option>
+<option value="dia19">Día 19</option>
+<option value="dia20">Día 20</option>
+<option value="dia21">Día 21</option>
+<option value="dia22">Día 22</option>
+<option value="dia23">Día 23</option>
+<option value="dia24">Día 24</option>
+<option value="dia25">Día 25</option>
+<option value="dia26">Día 26</option>
+<option value="dia27">Día 27</option>
+<option value="dia28">Día 28</option>
+</select>
+
+<input type="file" id="fotoInput" accept="image/*" multiple>
+<button onclick="subirFoto()">Subir foto</button>
+
+<div id="galeriaFotos"></div>
+
+</section>
+    
+    <!-- MENÚ DE NAVEGACIÓN -->
+   <nav>
+<ul>
+
+<li><a href="#vuelos">✈️ Vuelos</a></li>
+
+<!-- 🏨 ALOJAMIENTOS CON SUBMENU -->
+<li class="submenu">
+
+<a href="#alojamientos">🏨 Alojamientos</a>
+
+<ul class="dropdown">
+    <li><a href="#seminyak">🌴 Seminyak</a></li>
+    <li><a href="#ubud">🌿 Ubud</a></li>
+    <li><a href="#nusa">🏝️ Nusa Penida</a></li>
+    <li><a href="#jimbaran">🌅 Jimbaran</a></li>
+</ul>
+
+</li>
+
+<li><a href="#lugares">📍 Lugares</a></li>
+
+<li><a href="#roles-equipo">🎲 Juegos</a></li>
+</ul>
+</nav>
+
+
+
+        <!-- SECCIÓN VUELOS -->
+        <section id="vuelos">
+
+        <h2>✈️ Información completa del vuelo a Bali</h2>
+
+        <!-- ===================== -->
+        <!-- 🛫 VUELO DE IDA -->
+        <!-- ===================== -->
+
+        <article class="vuelo-ida">
+            <h3>🛫 Vuelo de ida — Málaga → Bali</h3>
+
+            <ul>
+                <li><strong>Origen:</strong> Málaga (AGP)</li>
+                <li><strong>Destino:</strong> Denpasar - Bali (DPS)</li>
+                <li><strong>Fecha salida:</strong> 17 Marzo 2026</li>
+                <li><strong>Hora salida:</strong> 14:20</li>
+                <li><strong>Llegada estimada:</strong> 17 Marzo 20:20 +1</li>
+                <li><strong>Clase:</strong> Economy</li>
+                <li><strong>Escalas:</strong> 1-2 escalas</li>
+                <li><strong>💰 Precio estimado ida:</strong> 400 € - 500 €</li>
+            </ul>
+        </article>
+
+        <!-- ===================== -->
+        <!-- 🔁 VUELO DE VUELTA -->
+        <!-- ===================== -->
+
+        <article class="vuelo-vuelta">
+            <h3>🛫 Vuelo de vuelta — Bali → Málaga</h3>
+
+            <ul>
+                <li><strong>Origen:</strong> Denpasar - Bali (DPS)</li>
+                <li><strong>Destino:</strong> Málaga (AGP)</li>
+                <li><strong>Fecha salida:</strong> 28 Marzo 2026</li>
+                <li><strong>Hora salida:</strong> 21:40</li>
+                <li><strong>Llegada estimada:</strong> 29 Marzo 16:45 +1</li>
+                <li><strong>Clase:</strong> Economy</li>
+                <li><strong>Escalas:</strong> Con conexiones</li>
+                <li><strong>💰 Precio estimado vuelta:</strong> 400 € - 500 €</li>
+            </ul>
+        </article>
+
+        <!-- ===================== -->
+        <!-- 💸 PRECIO TOTAL -->
+        <!-- ===================== -->
+
+        <article class="precio-total">
+            <h3>💸 Precio total del viaje</h3>
+
+            <ul>
+                <li><strong>Precio ida y vuelta estimado:</strong> 700 € - 900 €</li>
+                <li><strong>Precio mínimo encontrado:</strong> desde 561 €</li>
+                <li><strong>Incluye:</strong> Tasas e impuestos básicos</li>
+                <li><strong>No incluye:</strong> Equipaje extra o selección de asiento</li>
+            </ul>
+        </article>
+
+        <!-- ===================== -->
+        <!-- 🔗 ENLACE A SKYSCANNER -->
+        <!-- ===================== -->
+
+        <article class="reserva-vuelo">
+            <h3>🔗 Ver vuelo en Skyscanner</h3>
+
+            <p>
+                Puedes consultar todos los detalles y reservar el vuelo directamente desde Skyscanner:
+            </p>
+
+            <a href="https://www.skyscanner.es/transporte/vuelos/agp/dps/260317/260328/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=1&outboundaltsenabled=false&inboundaltsenabled=false&preferdirects=false#/details/9320-2603171420--32132-2-11109-2603182020%7C11109-2603282140--32132-2-9320-2603291640/index/0"
+            target="_blank">
+            ✈️ Ver vuelo completo en Skyscanner
+            </a>
+
+        </article>
+
+    </section>
+
+    <section id="alojamientos">
+
+    <h2>🏡 Alojamientos del viaje a Bali</h2>
+    <!-- Seminyak -->
+        <article id="seminyak" class="alojamiento">
+
+        <h3>🌴 18–21 Marzo — Seminyak</h3>
+        <p><strong>Villa:</strong> Hedonia Luxury Villas</p>
+        <p>Zona cercana a Petitenget y beach clubs.</p>
+
+        <div class="fotos-lugares">
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-hedonia-luxury.jpg" alt="Villa Hedonia Luxury">
+        <figcaption>Hedonia Luxury Villas</figcaption>
+        </figure>
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-hedonia-luxury2.jpg" alt="Habitación con piscina">
+        <figcaption>Habitación con piscina privada</figcaption>
+        </figure>
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-hedonia-luxury3.jpg" alt="Piscina interior">
+        <figcaption>Piscina interior</figcaption>
+        </figure>
+
+        </div>
+
+        <div class="enlaces">
+
+        <a href="https://www.booking.com/hotel/id/hedonia-luxury-villas.es.html?aid=898224&label=hotel_details-et6Qr4%401770201795&sid=c06aea766db702fa772f357c40150877&all_sr_blocks=835022405_348907572_4_10_0&checkin=2026-03-18&checkout=2026-03-21&dest_id=900040134&dest_type=city&dist=0&group_adults=4&group_children=0&hapos=1&highlighted_blocks=835022405_348907572_4_10_0&hpos=1&matching_block_id=835022405_348907572_4_10_0&no_rooms=1&req_adults=4&req_children=0&room1=A%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=835022405_348907572_4_10_0__827764773&srepoch=1771016299&srpvid=3dd40c156bf8d5c6441cf2243071243f&type=total&ucfs=1&"
+        target="_blank">
+        🏡 Ver alojamiento en Booking
+        </a>
+
+        
+
+        <a href="https://www.google.com/maps/dir//Hedonia+Villas,+Jl.+Lb.+Sari+Gg.+Drupadi+II,+Seminyak,+Kuta,+Badung+Regency,+Bali,+Indonesia/@-8.6884878,115.1611854,19.95z/data=!4m20!1m10!3m9!1s0x2dd247ae85025baf:0x4873393acd19eb7a!2sHedonia+Villas!5m2!4m1!1i2!8m2!3d-8.6886639!4d115.1616954!16s%2Fg%2F11jlz2n67w!4m8!1m0!1m5!1m1!1s0x2dd247ae85025baf:0x4873393acd19eb7a!2m2!1d115.1616941!2d-8.6886636!3e3?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank">
+        📍 Ver ubicación en Google Maps
+        </a>
+
+        </div>
+
+        </article>
+
+        <!-- Ubud -->
+
+        <article id="ubud" class="alojamiento">
+
+        <h3>🌿 21–25 Marzo — Ubud</h3>
+        <p><strong>Villa:</strong> Villa Themma Jungle</p>
+        <p>Ubicación natural ideal para excursiones.</p>
+
+        <div class="fotos-lugares">
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-themma.jpg" alt="Villa Themma Jungle">
+        <figcaption>Villa Themma Jungle</figcaption>
+        </figure>
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa.themma2.jpg" alt="Piscina Themma">
+        <figcaption>Piscina privada</figcaption>
+        </figure>
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa.themma3.jpg" alt="Salón villa">
+        <figcaption>Salón interior</figcaption>
+        </figure>
+
+        </div>
+
+        <div class="enlaces">
+
+        <a href="https://www.booking.com/hotel/id/rouge-private-villas-villa-nature.es.html?aid=898224&label=hotel_details-v49yUi%401770203418&sid=c06aea766db702fa772f357c40150877&all_sr_blocks=352961901_417081878_6_2_0&checkin=2026-03-21&checkout=2026-03-25&dest_id=-2701757&dest_type=city&dist=0&group_adults=4&group_children=0&hapos=1&highlighted_blocks=352961901_417081878_6_2_0&hpos=1&matching_block_id=352961901_417081878_6_2_0&no_rooms=2&req_adults=4&req_children=0&room1=A%2CA&room2=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=352961901_417081878_6_2_0__2084595900&srepoch=1771016493&srpvid=7f0d515efeca101d8db7ee18a54ff5ac&type=total&ucfs=1&"
+        target="_blank">
+        🏡 Ver alojamiento en Booking
+        </a>
+
+        
+
+        <a href="https://www.google.com/maps/dir//Villa+Themma+Jungle+-+Sumptuous+3BR+Luxury+Villa+with+Majestic+Jungle+View+North+of+Ubud,+Beresela,+Payangan,+Gianyar+Regency,+Bali,+Indonesia/@-8.4305296,115.2681455,17z/data=!4m21!1m11!3m10!1s0x2dd22271c34d17c5:0x4ad80b3e1cbe39b3!2sVilla+Themma+Jungle+-+Sumptuous+3BR+Luxury+Villa+with+Majestic+Jungle+View+North+of+Ubud!5m2!4m1!1i2!8m2!3d-8.4305296!4d115.2726516!15sCmxWaWxsYSBUaGVtbWEgSnVuZ2xlIC0gU3VtcHR1b3VzIDNCUiBMdXh1cnkgVmlsbGEgd2l0aCBNYWplc3RpYyBKdW5nbGUgVmlldyBOb3J0aCBvZiBVYnVkIChWaWxsYSkgKEluZG9uZXNpYSmSAQ92YWNhdGlvbl9yZW50YWzgAQA!16s%2Fg%2F11ssgcjl72!4m8!1m0!1m5!1m1!1s0x2dd22271c34d17c5:0x4ad80b3e1cbe39b3!2m2!1d115.2726516!2d-8.4305296!3e3?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank">
+        📍 Ver ubicación en Google Maps
+        </a>
+
+        </div>
+
+        </article>
+
+
+
+    <!-- 🏝️ NUSA PENIDA -->
+        <article id="nusa" class="alojamiento">
+
+        <h3>🏝️ 25–27 Marzo — Nusa Penida</h3>
+        <p><strong>Villa:</strong> Penida Bambu Green Villas</p>
+        <p>Zona tranquila en colinas con vistas al océano.</p>
+
+        <div class="fotos-lugares">
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-bungalow.jpg" alt="Penida Bambu Green Villas">
+        <figcaption>Penida Bambu Green Villas</figcaption>
+        </figure>
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-bungalow2.jpg" alt="Bungalow exterior">
+        <figcaption>Bungalow exterior</figcaption>
+        </figure>
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-bungalow3.jpg" alt="Interior bungalow">
+        <figcaption>Vista de dron del bungalow</figcaption>
+        </figure>
+
+        </div>
+
+        <div class="enlaces">
+
+        <a href="https://www.booking.com/hotel/id/penida-bambu-green.es.html?aid=898224&label=hotel_details-uWyETg5%401770204320&sid=abe63ecfa4abfa9162fed183be9b8a10&all_sr_blocks=315006803_364391582_0_1_0_452589%2C315006804_364391582_0_1_0_452589&checkin=2026-03-25&checkout=2026-03-27&dest_id=900052009&dest_type=city&dist=0&group_adults=4&group_children=0&hapos=1&highlighted_blocks=315006803_364391582_0_1_0_452589%2C315006804_364391582_0_1_0_452589&hpos=1&matching_block_id=315006803_364391582_0_1_0_452589&no_rooms=2&req_adults=4&req_children=0&room1=A%2CA&room2=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=315006803_364391582_0_1_0_452589_134134000%2C315006804_364391582_0_1_0_452589_177100000&srepoch=1770213544&srpvid=00bd624ff15d0457&type=total&ucfs=1&"
+        target="_blank">
+        🏡 Ver alojamiento en Booking
+        </a>
+
+        
+
+        <a href="https://www.google.com/maps/place/Penida+Bambu+Green+Villas/@-8.6956183,115.4817088,15z/data=!4m13!1m2!2m1!1sJalan+Raya+Adegan,+Banjar+Biaung+Desa,+Desa+Ped,+80771+Nusa+Penida,+Indonesia+penida+bambu+bungalow!3m9!1s0x2dd273d1088165f3:0x9515d66b1976f92!5m2!4m1!1i2!8m2!3d-8.6956183!4d115.4997332!15sCmNKYWxhbiBSYXlhIEFkZWdhbiwgQmFuamFyIEJpYXVuZyBEZXNhLCBEZXNhIFBlZCwgODA3NzEgTnVzYSBQZW5pZGEsIEluZG9uZXNpYSBwZW5pZGEgYmFtYnUgYnVuZ2Fsb3daYSJfamFsYW4gcmF5YSBhZGVnYW4gYmFuamFyIGJpYXVuZyBkZXNhIGRlc2EgcGVkIDgwNzcxIG51c2EgcGVuaWRhIGluZG9uZXNpYSBwZW5pZGEgYmFtYnUgYnVuZ2Fsb3eSAQV2aWxsYZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VOWE0zQnFYMHRCRUFF4AEA-gEECGYQNg!16s%2Fg%2F11gk8wngth?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank">
+        📍 Ver ubicación en Google Maps
+        </a>
+
+        </div>
+
+        </article>
+
+
+
+    <!-- 🌅 JIMBARAN -->
+    <article id="jimbaran" class="alojamiento">
+
+        <h3>🌅 27–28 Marzo — Jimbaran</h3>
+        <p><strong>Villa:</strong> Kayumanis Jimbaran Private Estate & Spa</p>
+        <p>Muy cerca del aeropuerto y playa.</p>
+
+        <div class="fotos-lugares">
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-kayumanis.jpg" alt="Kayumanis Piscina">
+        <figcaption>Piscina privada Kayumanis</figcaption>
+        </figure>
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-kayumanis2.jpg" alt="Villa Kayumanis">
+        <figcaption>Villa Kayumanis Jimbaran</figcaption>
+        </figure>
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-kayumanis3.jpg" alt="Cama villa">
+        <figcaption>Habitación principal</figcaption>
+        </figure>
+
+        </div>
+
+        <div class="enlaces">
+
+        <a href="https://www.booking.com/hotel/id/kayumanis-jimbaran.es.html?aid=898224&label=hotel_details-oxSQxDN%401770205666&sid=abe63ecfa4abfa9162fed183be9b8a10&all_sr_blocks=24648603_88826669_4_1_0&checkin=2026-03-27&checkout=2026-03-28&dest_id=-2680135&dest_type=city&dist=0&group_adults=4&group_children=0&hapos=1&highlighted_blocks=24648603_88826669_4_1_0&hpos=1&matching_block_id=24648603_88826669_4_1_0&no_rooms=1&req_adults=4&req_children=0&room1=A%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=24648603_88826669_4_1_0__919510900&srepoch=1770214535&srpvid=661c643e7f630033&type=total&ucfs=1&"
+        target="_blank">
+        🏡 Ver alojamiento en Booking
+        </a>
+
+        
+
+        <a href="https://www.google.com/maps/place/Kayumanis+Jimbaran+Private+Estate/@-8.7725994,115.169888,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipMmQQoT4TChCeXKNEG4TEHZw3D75Vz4NvDUY1tw!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipMmQQoT4TChCeXKNEG4TEHZw3D75Vz4NvDUY1tw%3Dw203-h135-k-no!7i2362!8i1575!4m14!1m2!2m1!1sJalan+Yoga+Perkanti,+Bali,+80364+Jimbaran,+Indonesia+Ubicación+excelente,+¡puntuada+con+9.2%2F10*21(puntuación+basada+en+104+comentarios)+Valorado+por+los+clientes+después+de+alojarse+en+el+Kayumanis+Jimbaran+Private+Villas+%26+Spa.+!3m10!1s0x2dd244619012321b:0xf2e644d5de435037!5m2!4m1!1i2!8m2!3d-8.7731699!4d115.1698389!10e5!15sCuYBSmFsYW4gWW9nYSBQZXJrYW50aSwgQmFsaSwgODAzNjQgSmltYmFyYW4sIEluZG9uZXNpYSBVYmljYWNpw7NuIGV4Y2VsZW50ZSwgwqFwdW50dWFkYSBjb24gOS4yLzEwIShwdW50dWFjacOzbiBiYXNhZGEgZW4gMTA0IGNvbWVudGFyaW9zKSBWYWxvcmFkbyBwb3IgbG9zIGNsaWVudGVzIGRlc3B1w6lzIGRlIGFsb2phcnNlIGVuIGVsIEtheXVtYW5pcyBKaW1iYXJhbiBQcml2YXRlIFZpbGxhcyAmIFNwYS5a4wEi4AFqYWxhbiB5b2dhIHBlcmthbnRpIGJhbGkgODAzNjQgamltYmFyYW4gaW5kb25lc2lhIHViaWNhY2nDs24gZXhjZWxlbnRlIHB1bnR1YWRhIGNvbiA5LjIgMTAgISggcHVudHVhY2nDs24gYmFzYWRhIGVuIDEwNCBjb21lbnRhcmlvcyB2YWxvcmFkbyBwb3IgbG9zIGNsaWVudGVzIGRlc3B1w6lzIGRlIGFsb2phcnNlIGVuIGVsIGtheXVtYW5pcyBqaW1iYXJhbiBwcml2YXRlIHZpbGxhcyAmIHNwYZIBBWhvdGVsmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU40TmxwdGQyTlJFQUXgAQD6AQQIABAN!16s%2Fg%2F1td8gdrk?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank">
+        📍 Ver ubicación en Google Maps
+        </a>
+
+        </div>
+
+        </article>
+
+
+<section id="lugares">
+
+<h2>📍 Itinerario día a día — Lugares que visitar</h2>
+
+<!-- 📅 Día 18 -->
+<article class="dia">
+<h3>📅 Día 18 — Llegada a Bali (Noche Ogoh-Ogoh)</h3>
+<ul>
+<li><strong>Llegada a Bali sobre las 20:30</strong>, comprar comida para el día siguiente y traslado desde el aeropuerto hasta la villa en Seminyak.</li>
+<li><strong>Check-in en la villa</strong> y primer contacto con Bali.</li>
+<li><strong>Noche de Ogoh-Ogoh</strong>, si todavía continúa el ambiente en las calles cercanas, podremos ver los desfiles tradicionales con grandes figuras demoníacas que los balineses pasean por las calles la noche antes del Día del Silencio (Nyepi).</li>
+</ul>
+
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-villa-hedonia-luxury.jpg" alt="Villa Hedonia Luxury">
+<figcaption>
+    <a href="https://www.google.com/maps/dir//Hedonia+Villas,+Jl.+Lb.+Sari+Gg.+Drupadi+II,+Seminyak,+Kuta,+Badung+Regency,+Bali,+Indonesia/@-8.6884878,115.1611854,19.95z/data=!4m20!1m10!3m9!1s0x2dd247ae85025baf:0x4873393acd19eb7a!2sHedonia+Villas!5m2!4m1!1i2!8m2!3d-8.6886639!4d115.1616954!16s%2Fg%2F11jlz2n67w!4m8!1m0!1m5!1m1!1s0x2dd247ae85025baf:0x4873393acd19eb7a!2m2!1d115.1616941!2d-8.6886636!3e3?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Check-in en Villa Hedonia Luxury
+    </a>
+</figcaption>
+</figure>
+
+<figure>
+<img src="imagenes-alojamientos/img-ogoh.jpeg" alt="Ogoh Ogoh">
+<figcaption>
+    <a>🎆 Noche de Ogoh Ogoh</a>
+          
+</figcaption>
+</figure>
+    
+</div>
+</article>
+
+
+<!-- 📅 Día 19 -->
+<article class="dia">
+<h3>📅 Día 19 — Nyepi (Día del Silencio)</h3>
+<ul>
+<li><strong>Nyepi</strong>, es el Año Nuevo balinés y uno de los días más especiales de la isla. Durante esta jornada toda Bali se detiene completamente: no hay vuelos, tráfico ni actividad en las calles.</li>
+<li><strong>Día de descanso en la villa</strong>, los turistas también deben permanecer dentro del alojamiento, por lo que es un día perfecto para disfrutar de la piscina, relajarse y vivir la experiencia única del silencio total en la isla.</li>
+</ul>
+
+<div class="fotos-lugares">
+
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-hedonia-luxury2.jpg" alt="Habitación con piscina">
+        <figcaption>
+             <a href="https://www.booking.com/hotel/id/hedonia-luxury-villas.es.html?aid=898224&label=hotel_details-et6Qr4%401770201795&sid=c06aea766db702fa772f357c40150877&all_sr_blocks=835022405_348907572_4_10_0&checkin=2026-03-18&checkout=2026-03-21&dest_id=900040134&dest_type=city&dist=0&group_adults=4&group_children=0&hapos=1&highlighted_blocks=835022405_348907572_4_10_0&hpos=1&matching_block_id=835022405_348907572_4_10_0&no_rooms=1&req_adults=4&req_children=0&room1=A%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=835022405_348907572_4_10_0__827764773&srepoch=1771016299&srpvid=3dd40c156bf8d5c6441cf2243071243f&type=total&ucfs=1&"
+        target="_blank">
+        🏡 Hedonia Luxury Villas
+        </a>
+        </figcaption>
+        </figure>
+    
+        <figure>
+        <img src="imagenes-alojamientos/img-villa-hedonia-luxury3.jpg" alt="Piscina interior">
+        <figcaption>
+             <a href="https://www.booking.com/hotel/id/hedonia-luxury-villas.es.html?aid=898224&label=hotel_details-et6Qr4%401770201795&sid=c06aea766db702fa772f357c40150877&all_sr_blocks=835022405_348907572_4_10_0&checkin=2026-03-18&checkout=2026-03-21&dest_id=900040134&dest_type=city&dist=0&group_adults=4&group_children=0&hapos=1&highlighted_blocks=835022405_348907572_4_10_0&hpos=1&matching_block_id=835022405_348907572_4_10_0&no_rooms=1&req_adults=4&req_children=0&room1=A%2CA%2CA%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=835022405_348907572_4_10_0__827764773&srepoch=1771016299&srpvid=3dd40c156bf8d5c6441cf2243071243f&type=total&ucfs=1&"
+        target="_blank">
+        🏡 Piscina interior
+        </a>
+        </figcaption>
+        </figure>     
+</div>
+
+</article>
+
+
+<!-- 📅 Día 20 -->
+<article class="dia">
+<h3>📅 Día 20 — Ruta sur de Bali</h3>
+<ul>
+<li><strong>🚐 Salida desde el hotel</strong>, inicio de la excursión hacia la zona sur de Bali.</li>
+<li><strong>Uluwatu Temple</strong>, templo situado sobre un impresionante acantilado con vistas al océano Índico, uno de los templos más famosos de Bali.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-ulutemple.jpeg" alt="Uluwatu Temple">
+<figcaption>
+    <a href="https://www.google.com/maps/search/Uluwatu+Temple/@-8.8177061,115.058197,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Uluwatu Temple
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Padang Padang Beach</strong>, pequeña playa rodeada de acantilados muy conocida por su arena clara y sus aguas turquesas.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-padang.jpg.webp" alt="Padang Padang Beach">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Playa+Padang+Padang/@-8.8111524,115.1012494,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd245505d4ce257:0x64783bec584c4015!8m2!3d-8.8111377!4d115.1037658!16s%2Fg%2F11b6syl4fp?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Padang Padang Beach
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Melasti Beach</strong>, espectacular playa situada entre altos acantilados de piedra caliza y famosa por sus miradores panorámicos.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-melasti.webp" alt="Melasti Beach">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Melasti+Beach/@-8.8482927,115.14257,14z/data=!3m1!4b1!4m6!3m5!1s0x2dd25be3c65bc987:0xfadb552ebfa90802!8m2!3d-8.8482935!4d115.1631697!16s%2Fg%2F11g2xt94hl?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Melasti Beach
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Sanur</strong>, zona costera tranquila donde termina la ruta y desde donde salen muchos barcos hacia las islas cercanas.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-sanur.jpg.webp" alt="Sanur">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Sanur,+Denpasar+Selatan,+Denpasar+City,+Bali,+Indonesia/@-8.6947879,115.2389268,14z/data=!3m1!4b1!4m6!3m5!1s0x2dd241b7d35f0b21:0x5030bfbca830e40!8m2!3d-8.6954715!4d115.2636795!16s%2Fg%2F1yprv110h?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Sanur
+    </a>
+</figcaption>
+</figure>
+</div>
+</ul>
+</article>
+
+
+<!-- 📅 Día 21 -->
+<article class="dia">
+<h3>📅 Día 21 — Ruta centro sur de Bali</h3>
+<ul>
+<li><strong>🚐 Recogida en el hotel a las 8:30</strong>, inicio de la excursión por la zona centro-sur de Bali.</li>
+<li><strong>Traslado de alojamientos</strong>, el guía guardará nuestras maletas en el coche durante toda la excursión para poder trasladarnos directamente al nuevo alojamiento al finalizar la ruta.</li><li><strong>Danza balinesa tradicional</strong>, espectáculo cultural donde se representan historias de la mitología hindú con música y vestimenta típica.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-danza.jpg" alt="Danza balinesa tradicional">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Ubud+Palace+Legong+Dance+Show/@-8.4444446,115.0034456,10.43z/data=!4m10!1m2!2m1!1spresentacion+Danza+balinesa+tradicional+bali!3m6!1s0x2dd23d612e5b2bab:0xa05ae5e9a7dcaf64!8m2!3d-8.5066165!4d115.2626829!15sCixwcmVzZW50YWNpb24gRGFuemEgYmFsaW5lc2EgdHJhZGljaW9uYWwgYmFsaVouIixwcmVzZW50YWNpb24gZGFuemEgYmFsaW5lc2EgdHJhZGljaW9uYWwgYmFsaZIBFXBlcmZvcm1pbmdfYXJ0c19ncm91cJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOSU5rNUROblIzUlJBQuABAPoBBAgAEBw!16s%2Fg%2F11kj9799kb?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Danza balinesa tradicional
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Templo Batuan</strong>, uno de los templos más antiguos y mejor conservados de Bali, famoso por su arquitectura tradicional balinesa.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-batuan.jpg.webp" alt="Templo Batuan">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Pura+Puseh+Desa+Batuan/@-8.5854335,115.275721,15z/data=!4m10!1m2!2m1!1stemplo+batuan!3m6!1s0x2dd23e19172e7ae9:0x9a976c4b8d5e5007!8m2!3d-8.582258!4d115.2757489!15sCg10ZW1wbG8gYmF0dWFuWg8iDXRlbXBsbyBiYXR1YW6SAQxoaW5kdV90ZW1wbGWaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUjFNMk55UW5WQlJSQULgAQD6AQQIABAt!16s%2Fg%2F11b6zv0dlj?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Templo Batuan
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Monkey Forest</strong>, bosque sagrado situado en el centro de Ubud donde viven cientos de monos y varios templos rodeados de selva.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-monkey-forest.webp" alt="Monkey Forest">
+<figcaption>
+    <a href="https://www.google.com/maps/search/Monkey+Forest/@-8.5854246,115.2036187,12z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Monkey Forest
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Templo Goa Gajah</strong>, conocido como la “Cueva del Elefante”, un antiguo santuario con relieves tallados en la roca y piscinas sagradas.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-cueva.jpg" alt="Templo Goa Gajah">
+<figcaption>
+    <a href="https://www.google.com/maps/search/Templo+Goa+Gajah/@-8.5250007,115.2862554,18z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Templo Goa Gajah
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>🍽️ ALMUERZO</strong>, parada para comer en un restaurante local durante la excursión.</li>
+
+<br>
+
+<li><strong>Cascada Tegenungan</strong>, una de las cascadas más populares cerca de Ubud, rodeada de vegetación tropical y con varios miradores.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-tegenungan.jpg" alt="Cascada Tegenungan">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Tegenungan+Waterfall/@-8.5753621,115.286385,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd2161beebd0c61:0xc1ae79ddb8410c5e!8m2!3d-8.5753621!4d115.2889599!16s%2Fg%2F11bvx3j8m8?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Cascada Tegenungan
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Check-in en Villa Themma</strong>, llegada al alojamiento en Ubud y tiempo para descansar después de la excursión.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-villa-themma.jpg" alt="Villa Ubud">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Villa+Themma+Jungle/@-8.4303568,115.2715303,17z/data=!3m1!4b1!4m9!3m8!1s0x2dd223b5c9ee8c87:0x57ad3ea081a6f2ff!5m2!4m1!1i2!8m2!3d-8.4303568!4d115.2741052!16s%2Fg%2F11t_lm5vjb?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Villa Themma
+    </a>
+</figcaption>
+</figure>
+</div>
+ </ul>
+</article>
+
+    
+<!-- 📅 Día 22 -->
+<article class="dia">
+<h3>📅 Día 22 — Ruta norte de Bali</h3>
+<ul>
+<li><strong>🚐 Recogida en la villa a las 8:30</strong>, inicio de la excursión hacia la zona montañosa del norte de Bali.</li>
+<li><strong>Templo del lago Beratan (Ulun Danu Beratan)</strong>, uno de los templos más icónicos de Bali situado sobre el lago en la zona de Bedugul.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-templo.jpg" alt="Templo del lago Beratan">
+<figcaption>
+    <a href="https://www.google.com/maps/search/Templo+del+lago+Beratan/@-8.2733467,115.1648774,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Templo del lago Beratan
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Cascada Banyumala</strong>, cascada escondida en la selva a la que se llega tras una pequeña caminata por la naturaleza.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-cascada.jpg" alt="Cascada Banyumala">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Banyumala+Waterfall/@-8.2171873,115.0991062,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd18f9d7a04e875:0x4eccd9e08e4d2397!8m2!3d-8.2171873!4d115.1016811!16s%2Fg%2F11f3jy7mcg?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Cascada Banyumala
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Vista de los lagos gemelos</strong>, miradores panorámicos con vistas al lago Buyan y al lago Tamblingan.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-gemelos.jpg" alt="Vista de los lagos gemelos">
+<figcaption>
+    <a href="https://www.google.com/maps/search/Vista+de+los+lagos+gemelos/@-8.2468365,115.0975974,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Vista de los lagos gemelos
+    </a>
+</figcaption>
+</figure>
+</div>
+    
+<br>
+    
+<li><strong>🍽️ ALMUERZO</strong>, parada para comer en un restaurante local durante la excursión y descansar antes de continuar la ruta.</li>
+
+<br>
+    
+<li><strong>Arrozales de Jatiluwih</strong>, enormes terrazas de arroz declaradas Patrimonio de la Humanidad por la UNESCO.</li>   
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-arrozales.jpg" alt="Arrozales de Jatiluwih">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Jatiluwih+Rice+Terraces/@-8.3700942,115.128652,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd227ab020cd7fb:0x2f0f875ff3e6839a!8m2!3d-8.3700942!4d115.1312269!16s%2Fg%2F11b6dfvgqz?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Arrozales de Jatiluwih
+    </a>
+</figcaption>
+</figure>
+</div>
+</ul>
+</article>
+
+
+<!-- 📅 Día 23 -->
+<article class="dia">
+<h3>📅 Día 23 — Ruta este de Bali</h3>
+<ul>
+<li><strong>🚐 Recogida en la villa a las 8:30</strong>, inicio de la excursión hacia la zona este de Bali.</li>
+<li><strong>Templo Lempuyang</strong>, conocido como la famosa “Puerta del Cielo”, uno de los templos más icónicos de Bali con vistas espectaculares al volcán Agung.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-puerta.jpg" alt="Templo Lempuyang">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Penataran+Agung+Lempuyang+Temple/@-8.3917875,115.6289808,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd2071753222893:0x40a0fd58fe779263!8m2!3d-8.3917875!4d115.6315557!16s%2Fg%2F11gdkpxymn?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Templo Lempuyang
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+    
+<li><strong>Tirta Gangga</strong>, antiguo palacio real del agua famoso por sus jardines, estanques y esculturas tradicionales balinesas.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-gangga.jpg" alt="Tirta Gangga">
+<figcaption>
+    <a href="https://www.google.com/maps/search/Tirta+Gangga/@-8.3917875,115.6289808,17z?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Tirta Gangga
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+   
+<li><strong>🍽️ ALMUERZO</strong>, parada para comer en un restaurante local durante la excursión.</li>
+
+<br>
+    
+<li><strong>Kanto Lampo</strong>, cascada muy popular por sus rocas escalonadas donde cae el agua, ideal para fotografías.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-lampo.jpg" alt="Kanto Lampo">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Kanto+Lampo+Waterfall/@-8.5325074,115.3302864,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd217ff9adc01a1:0xea08b2e84ad7ab23!8m2!3d-8.5325074!4d115.3328613!16s%2Fg%2F11lrkjx_fc?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Kanto Lampo
+    </a>
+</figcaption>
+</figure>
+</div>
+
+<br>
+   
+<li><strong>Virgin Beach</strong>, playa tranquila de arena clara situada en la costa este de Bali, perfecta para relajarse antes de regresar.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-virgin.jpg" alt="Virgin Beach">
+<figcaption>
+    <a href="https://www.google.com/maps/search/Virgin+Beach/@-8.4996681,115.5906577,14z/data=!3m1!4b1!4m2!2m1!6e1?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Virgin Beach
+    </a>
+</figcaption>
+</figure>
+</div>
+</ul>
+
+</article>
+
+
+<!-- 📅 Día 24 -->
+<article class="dia">
+<h3>📅 Día 24 — Ruta centro de Bali</h3>
+<ul>
+<li><strong>🚐 Recogida en la villa a las 8:30</strong>, inicio de la excursión por el centro de Bali.</li>
+<li><strong>Tegalalang Rice Terrace</strong>, las famosas terrazas de arroz situadas al norte de Ubud, conocidas por sus paisajes verdes y sus columpios panorámicos.</li>
+    <div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-terraza-arroz-dia20.jpg" alt="Ubud">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=Tegalalang+Rice+Terrace+Bali" target="_blank">
+        📍 Tegalalang Rice Terrace
+    </a>
+</figcaption>
+</figure>
+    </div>
+    <br>
+<li><strong>Columpio panorámico</strong>, experiencia muy popular en la zona de los arrozales donde podrás balancearte sobre el valle con vistas espectaculares.</li>
+    <div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-columpio.jpg" alt="Columpio Paronámico">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Real+Bali+Swing/@14.0367131,55.3543902,3z/data=!4m10!1m2!2m1!1scolumpio+paronámico+en+bali!3m6!1s0x2dd23d2bb78f98e5:0xdc87cb5e74348952!8m2!3d-8.4906347!4d115.2399794!15sChxjb2x1bXBpbyBwYXJvbsOhbWljbyBlbiBiYWxpWh4iHGNvbHVtcGlvIHBhcm9uw6FtaWNvIGVuIGJhbGmSAQp0aGVtZV9wYXJrmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVU55ZW05TVZUSkJSUkFC4AEA-gEECAAQMg!16s%2Fg%2F11dxl6hnl9?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Columpio Paronámico
+    </a>
+</figcaption>
+</figure>
+    </div>
+<br>
+<li><strong>Tirta Empul</strong>, templo sagrado del agua donde los balineses realizan rituales de purificación en sus manantiales.</li>
+    <div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-tirta-empul.avif" alt="Tirta Empul">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Pura+Tirta+Empul/@-8.4157038,115.3127292,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd218f4e06131b5:0x53a25a017714ecc1!8m2!3d-8.4156589!4d115.3153284!16s%2Fm%2F0b6jfq9?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Tirta Empul
+    </a>
+</figcaption>
+</figure>
+    </div>
+<br>
+<li><strong>Pueblo tradicional Penglipuran</strong>, uno de los pueblos mejor conservados de Bali, famoso por su arquitectura tradicional y sus calles perfectamente alineadas.</li>
+    <div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-pueblo.webp" alt="Pueblo tradicional Penglipuran">
+<figcaption>
+    <a href="https://www.google.com/maps/search/Pueblo+tradicional+Penglipuran/@-8.466161,115.3274556,11.76z?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Pueblo tradicional Penglipuran
+    </a>
+</figcaption>
+</figure>
+    </div>
+<br>
+<li><strong>Bosque de bambú</strong>, zona natural muy tranquila cerca de Penglipuran conocida por sus enormes cañas de bambú.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-bambu.jpg.webp" alt="Bosque de bambú">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Bamboo+Forest+At+Penglipuran+Village/@-8.4189443,115.355767,17z/data=!4m10!1m2!2m1!1sPenglipuran+Bamboo+Forest!3m6!1s0x2dd2196eace4f4a9:0x96a5c1006fe19096!8m2!3d-8.4189443!4d115.3602731!15sChlQZW5nbGlwdXJhbiBCYW1ib28gRm9yZXN0WhsiGXBlbmdsaXB1cmFuIGJhbWJvbyBmb3Jlc3SSAQpyZXN0YXVyYW50mgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5UVU5STkdGZmEyeG5SUkFC4AEA-gEECAAQIg!16s%2Fg%2F11c268t6g0?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Bosque de bambú
+    </a>
+</figcaption>
+</figure>
+    </div>
+     <br>   
+    <li><strong>🍽️ ALMUERZO</strong>, parada para comer en un restaurante local durante la excursión y descansar antes de continuar la ruta.</li>
+     <br>
+<li><strong>Cascada Goa Raja</strong>, cascada escondida en la selva rodeada de vegetación tropical y ambiente muy natural.</li>
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-goa.jpg" alt="Cascada Goa Raja">
+<figcaption>
+    <a href="https://www.google.com/maps/place/Goa+Rajo+Waterfall/@-8.441662,115.3734351,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd219b155035919:0x793ef7c858f7f4c6!8m2!3d-8.441662!4d115.37601!16s%2Fg%2F11j078j_v5?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        📍 Cascada Goa Raja
+    </a>
+</figcaption>
+</figure>
+    </div>
+
+</ul>
+</article>
+
+<!-- 📅 Día 25 -->
+<article class="dia">
+<h3>📅 Día 25 — Ferry a Nusa Penida</h3>
+
+<div class="fotos-lugares">
+
+<p><strong>Ferry rápido desde Sanur</strong>, este es el puerto principal desde donde salen los fast boats hacia Nusa Penida, Nusa Lembongan o las Gili y está en la zona de Jl. Matahari Terbit, Sanur.</p>
+<figure>
+<img src="imagenes-alojamientos/img-ferry-sanur.jpg" alt="Ferry a Nusa Penida">
+<figcaption><a href="https://www.google.com/maps/search/?api=1&query=Sanur+Harbour+Fast+Boat+Terminal+Bali" target="_blank">
+        📍 Ferry a Nusa Penida
+    </a></figcaption>
+</figure>
+
+<p><strong>Check-in</strong> Villa Penida Bambu Green</p>
+<figure>
+<img src="imagenes-alojamientos/img-checkin-penida.jpg" alt="Check-in Villa Penida Bambu Green">
+<figcaption><a href="https://www.google.com/maps/search/?api=1&query=Penida+Bambu+Green+Villas+Nusa+Penida" target="_blank">
+        📍 Check-in Villa Penida Bambu Green
+    </a></figcaption>
+</figure>
+
+<p><strong>Explorar isla</strong> a nuestro antojo, desde el enlace puedes moverte a los puntos más famosos como Kelingking Beach, Diamond Beach, Angel’s Billabong o Broken Beach y abrirlos fácilmente también en Grab.</p>
+<figure>
+<img src="imagenes-alojamientos/img-explorar-isla.jpg" alt="Explorar isla ">
+<figcaption><a href="https://www.google.com/maps/search/?api=1&query=Nusa+Penida+Island+Bali" target="_blank">
+        📍 Explorar isla 
+    </a></figcaption>
+</figure>
+
+</div>
+
+</article>
+
+
+<!-- 📅 Día 26 -->
+<article class="dia">
+<h3>📅 Día 26 — Playas icónicas</h3>
+
+<div class="fotos-lugares">
+
+<p><strong>Kelingking Beach</strong>, es el mirador más famoso de la isla, conocido por la forma de “T-Rex” del acantilado y sus vistas espectaculares al océano.</p>
+<figure>
+<img src="imagenes-alojamientos/img-kelingking-beach.webp" alt="Kelingking Beach">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=Kelingking+Beach+Nusa+Penida" target="_blank">
+        📍 Kelingking Beach
+    </a>
+</figcaption>
+</figure>
+
+<p><strong>Diamond Beach</strong>, es una de las playas más espectaculares de la isla, famosa por sus escaleras talladas en el acantilado y las formaciones rocosas puntiagudas frente al mar.</p>
+<figure>
+<img src="imagenes-alojamientos/img-diamond-beach.webp" alt="Diamond Beach">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=Diamond+Beach+Nusa+Penida" target="_blank">
+        📍 Diamond Beach
+    </a>
+</figcaption>
+</figure>
+
+<p><strong>Atuh Beach</strong>, está muy cerca de Diamond Beach, en la parte este de la isla, conocida por sus arcos de roca y arena blanca.</p>
+<figure>
+<img src="imagenes-alojamientos/img-atuh-beach.jpg" alt="Atuh Beach">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=Atuh+Beach+Nusa+Penida" target="_blank">
+        📍 Atuh Beach
+    </a>
+</figcaption>
+</figure>
+
+<p><strong>Snorkel Manta Point</strong>, es uno de los mejores sitios para hacer snorkel o buceo y ver mantarrayas gigantes, normalmente se accede en excursión en barco desde el puerto.  
+<br><strong>Empresa recomendada:</strong> Discover Nusa Penida, muy bien valorada por sus grupos pequeños, buen material de snorkel y fotos con GoPro durante la excursión.  
+<br><strong>Reserva:</strong> se puede contactar directamente por WhatsApp o email.  
+<br>📞 WhatsApp: +62 857-3734-3308  
+<br>✉️ Email: discovernusapenida@gmail.com  
+<br><strong>Precio aproximado:</strong> 30-60 € por persona.</p>
+
+<figure>
+<img src="imagenes-alojamientos/img-snorkel-manta.jpg" alt="Snorkel Manta Point">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=Manta+Point+Nusa+Penida" target="_blank">
+        📍 Snorkel Manta Point
+    </a>
+</figcaption>
+</figure>
+
+</div>
+
+</article>
+
+<!-- 📅 Día 27 -->
+<article class="dia">
+<h3>📅 Día 27 — Jimbaran</h3>
+
+<div class="fotos-lugares">
+
+<p><strong>Traslado desde Nusa Penida y Check-in en Villa Kayumanis Jimbaran</strong>, traslado desde el puerto y llegada al alojamiento. Puedes escribir en Grab simplemente: “Kayumanis Jimbaran” y te llevará directo a la entrada de la villa.</p>
+<figure>
+<img src="imagenes-alojamientos/img-villa-kayumanis2.jpg" alt="Villa Kuyamanis Jimbaran">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=Kayumanis+Jimbaran+Private+Estate+%26+Spa+Bali" target="_blank" rel="noopener noreferrer">
+        📍 Villa Kayumanis Jimbaran
+    </a>
+</figcaption>
+</figure>
+
+<p><strong>🐘 Mason Elephant Park</strong>, posibilidad de contratar la experiencia con elefantes en Mason Elephant Park (Ubud). <strong>Intentaremos realizar esta actividad en algún día anterior si tenemos tiempo durante las excursiones.</strong><br>
+<strong>Reserva:</strong><br>
+🌐 <a href="https://www.masonelephantpark.com" target="_blank" rel="noopener noreferrer">masonelephantpark.com</a><br>
+📞 Tel: +62 361 721480<br>
+📧 info@masonelephantpark.com
+</p>
+
+<figure>
+<img src="imagenes-alojamientos/img-elefantes-mason.jpg" alt="Mason Elephant Park Bali">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=Mason+Elephant+Park+Bali" target="_blank" rel="noopener noreferrer">
+        📍 Mason Elephant Park
+    </a>
+</figcaption>
+</figure>
+
+<p><strong>🏍️ Ruta en Quads</strong>, excursión en ATV por caminos de selva, arrozales, túneles y ríos. <strong>También intentaremos realizarla en días anteriores si encaja bien durante las rutas.</strong><br>
+<strong>Reserva:</strong><br>
+🌐 <a href="https://balidirtbikeadventure.com" target="_blank" rel="noopener noreferrer">balidirtbikeadventure.com</a><br>
+📞 WhatsApp: +62 821 4690 1710
+</p>
+
+<figure>
+<img src="imagenes-alojamientos/img-quads-bali.jpg" alt="Quads Bali">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=ATV+Quad+Bali" target="_blank" rel="noopener noreferrer">
+        📍 ATV Quad Bali
+    </a>
+</figcaption>
+</figure>
+
+<p><strong>🖋️ Tatuaje en Amor Fati Tattoo (Canggu)</strong>, estudio muy conocido en Bali. Horario de <strong>10:00 a 20:00</strong>. Se puede reservar cualquier día si tenemos tiempo libre durante el viaje o dejarlo para este día.<br>
+<strong>Reserva:</strong> normalmente se hace enviando un <strong>mensaje directo por TikTok</strong> al estudio.<br>
+🎵 TikTok: <a href="https://www.tiktok.com/@amorfatitattoo" target="_blank" rel="noopener noreferrer">@amorfatitattoo</a>
+</p>
+
+<figure>
+<img src="imagenes-alojamientos/img-tattoo-amor-fati.jpg.avif" alt="Amor Fati Tattoo Canggu">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=Amor+Fati+Tattoo+Canggu+Bali" target="_blank" rel="noopener noreferrer">
+        📍 Amor Fati Tattoo
+    </a>
+</figcaption>
+</figure>
+
+</div>
+
+</article>
+
+<!-- 📅 Día 28 -->
+<article class="dia">
+<h3>📅 Día 28 — Regreso</h3>
+    <!-- 🎲 RULETA SORPRESA -->
+<div class="ruleta-sorpresa">
+    <button id="botonRuleta">🎲 Plan sorpresa</button>
+    <p id="resultadoRuleta">Pulsa para descubrir el plan oculto...</p>
+</div>
+    <ul>
+<li><strong>Desayuno tranquilo</strong></li>
+<li><strong>Traslado al aeropuerto</strong>, el vuelo sale a las <strong>21:40 (hora de Bali)</strong>, por lo que durante el día todavía hay bastante tiempo para hacer alguna actividad o visitar algún sitio si encaja bien en el horario. Aun así conviene organizarlo con calma para llegar al aeropuerto con tiempo. En Grab puedes escribir también: “Denpasar Airport” o “Ngurah Rai Airport (DPS)” y te llevará a la terminal de salidas internacionales.</li>
+<li><strong>Vuelo de vuelta, FIN DEL VIAJE</strong></li>
+</ul>
+
+<div class="fotos-lugares">
+<figure>
+<img src="imagenes-alojamientos/img-vuelo-vuelta.jpeg" alt="Aeropuerto DPS">
+<figcaption>
+    <a href="https://www.google.com/maps/search/?api=1&query=Ngurah+Rai+International+Airport+Bali" target="_blank">
+        📍 Aeropuerto Ngurah Rai
+    </a>
+</figcaption>
+</figure>
+</div>
+</article>
+</section>
+
+<!-- 🎒 CHECKLIST VIAJE BALI -->
+<section class="checklist-bali">
+
+<h2>🎒 Preparativos del viaje</h2> 
+
+<div class="barra-progreso">
+    <div id="progresoCheck"></div>
+</div>
+
+<div class="lista-check">
+
+<label><input type="checkbox" class="checkItem"> Pasaporte</label>
+<label><input type="checkbox" class="checkItem"> Visa Bali</label>
+<label><input type="checkbox" class="checkItem"> QR control de aduanas</label>
+<label><input type="checkbox" class="checkItem"> QR control de salud</label>
+
+<label><input type="checkbox" class="checkItem"> Avión reservado</label>
+<label><input type="checkbox" class="checkItem"> Seguro de viaje contratado</label>
+<label><input type="checkbox" class="checkItem"> Alojamientos reservados</label>
+
+<label><input type="checkbox" class="checkItem"> Tarjeta Revolut</label>
+<label><input type="checkbox" class="checkItem"> Comprobar roaming</label>
+
+<label><input type="checkbox" class="checkItem"> Cargador</label>
+<label><input type="checkbox" class="checkItem"> Adaptador enchufe</label>
+<label><input type="checkbox" class="checkItem"> Batería portátil</label>
+
+<label><input type="checkbox" class="checkItem"> Protector / crema solar</label>
+<label><input type="checkbox" class="checkItem"> Repelente de mosquitos</label>
+
+</div>
+
+</section>
+
+ <!-- 🌀 ROLES DEL EQUIPO EN BALI -->
+<section id="roles-equipo" class="roles-bali">
+
+<h2>🌀 Roles del equipo en Bali</h2>
+
+<div class="grid-roles">
+
+<!-- BORJA -->
+<div class="persona carta3D">
+<div class="carta-inner">
+
+<div class="carta-front">
+<h3>🔥 Borja</h3>
+<button class="btnRol" data-persona="Borja">🎲 Revelar roles</button>
+</div>
+
+<div class="carta-back">
+<div id="roles-Borja" class="zonaRoles"></div>
+</div>
+
+</div>
+</div>
+
+<!-- MANUEL -->
+<div class="persona carta3D">
+<div class="carta-inner">
+
+<div class="carta-front">
+<h3>🌿 Manuel</h3>
+<button class="btnRol" data-persona="Manuel">🎲 Revelar roles</button>
+</div>
+
+<div class="carta-back">
+<div id="roles-Manuel" class="zonaRoles"></div>
+</div>
+
+</div>
+</div>
+
+<!-- NAZARET -->
+<div class="persona carta3D">
+<div class="carta-inner">
+
+<div class="carta-front">
+<h3>🌺 Nazaret</h3>
+<button class="btnRol" data-persona="Nazaret">🎲 Revelar roles</button>
+</div>
+
+<div class="carta-back">
+<div id="roles-Nazaret" class="zonaRoles"></div>
+</div>
+
+</div>
+</div>
+
+<!-- MARTINA -->
+<div class="persona carta3D">
+<div class="carta-inner">
+
+<div class="carta-front">
+<h3>🌊 Martina</h3>
+<button class="btnRol" data-persona="Martina">🎲 Revelar roles</button>
+</div>
+
+<div class="carta-back">
+<div id="roles-Martina" class="zonaRoles"></div>
+</div>
+    
+</div>
+</div>
+
+</div>
+</section>
+        
+<section class="checklist-bali">
+
+  <div id="loginDocumentos">
+    <h2>🔒 Acceso a documentos</h2>
+
+    <input type="password" id="passwordDocs" placeholder="Introduce la contraseña">
+    <button onclick="verificarPassword()">Entrar</button>
+
+    <p id="errorPassword"></p>
+  </div>
+
+  <div id="zonaDocumentos" style="display:none;">
+
+    <h2>📁 Documentos del viaje</h2>
+
+    <input type="file" id="fileInput">
+    <button onclick="subirArchivo()">Subir documento</button>
+
+    <div id="listaArchivos"></div>
+
+  </div>
+
+</section>
+        
+<!-- 📱 BARRA APP MOVIL -->
+<div class="barra-app">
+
+<a href="#lugares">📍<span>Lugares</span></a>
+
+<a href="#vuelos">✈️<span>Vuelos</span></a>
+
+<a href="#roles-equipo">🌀<span>Roles</span></a>
+
+<a href="#contador">⏳<span>Cuenta atrás</span></a>
+
+</div>
+
+
+<script>
+/* =====================================
+🌴 MENU ACTIVO SCROLL
+===================================== */
+
+const secciones = document.querySelectorAll("section");
+const linksMenu = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+    let actual = "";
+
+    secciones.forEach(seccion => {
+        const top = window.scrollY;
+        const offset = seccion.offsetTop - 150;
+        const altura = seccion.offsetHeight;
+        const id = seccion.getAttribute("id");
+
+        if(top >= offset && top < offset + altura){
+            actual = id;
+        }
+    });
+
+    linksMenu.forEach(link => {
+        link.classList.remove("activo");
+
+        if(link.getAttribute("href") === "#" + actual){
+            link.classList.add("activo");
+        }
+    });
+
+});
+
+
+/* =====================================
+✈️ CONTADOR + AVION
+===================================== */
+
+const contador = document.getElementById("contador");
+const fechaVuelo = new Date("March 17, 2026 14:20:00").getTime();
+
+function actualizarContador(){
+
+    if(!contador) return;
+
+    const ahora = new Date().getTime();
+    const diferencia = fechaVuelo - ahora;
+
+    if(diferencia <= 0){
+        contador.innerHTML = "🌴 ¡ES HOY! Nos vamos a Bali ✈️";
+        return;
+    }
+
+    const dias = Math.floor(diferencia / (1000*60*60*24));
+    const horas = Math.floor((diferencia % (1000*60*60*24)) / (1000*60*60));
+    const minutos = Math.floor((diferencia % (1000*60*60)) / (1000*60));
+    const segundos = Math.floor((diferencia % (1000*60)) / 1000);
+
+    const cajaContador = document.querySelector(".contador-vuelo");
+
+    if(cajaContador){
+        cajaContador.classList.remove("contador-verde","contador-naranja","contador-rojo");
+
+        if(dias > 15){
+            cajaContador.classList.add("contador-verde");
+        }else if(dias > 7){
+            cajaContador.classList.add("contador-naranja");
+        }else{
+            cajaContador.classList.add("contador-rojo");
+        }
+    }
+
+    const avion = document.getElementById("avion");
+
+    if(avion){
+        if(dias <= 7 && diferencia > 0){
+            avion.classList.add("avion-activo");
+        }else{
+            avion.classList.remove("avion-activo");
+        }
+    }
+
+    contador.innerHTML =
+        dias + " días " +
+        horas + "h " +
+        minutos + "m " +
+        segundos + "s ✈️";
+    
+
+}
+
+setInterval(actualizarContador,1000);
+actualizarContador();
+
+
+/* =====================================
+🎲 RULETA
+===================================== */
+
+const botonRuleta = document.getElementById("botonRuleta");
+const resultadoRuleta = document.getElementById("resultadoRuleta");
+
+const planesSorpresa = [
+"🐢 Visita al centro de tortugas de Serangan",
+"🧘 Yoga suave frente al mar en Jimbaran",
+"🌴 Café en un beach club tranquilo en Uluwatu",
+"📸 Ruta de fotos por acantilados de Uluwatu",
+"🍦 Helado o postre tropical en Canggu",
+"🛍️ Compras rápidas en Samasta Lifestyle Village",
+"🌅 Último atardecer en Uluwatu Temple",
+"🚶 Paseo por el mercado local de Jimbaran",
+"🌊 Mirador secreto en los acantilados de Bukit",
+"🍹 Sunset drink en Single Fin (Uluwatu)",
+"☕ Coffee specialty en una cafetería bonita",
+"🏖️ Último baño en Padang Padang Beach"
+];
+
+if(botonRuleta){
+    botonRuleta.addEventListener("click", ()=>{
+        const random = Math.floor(Math.random()*planesSorpresa.length);
+        resultadoRuleta.innerHTML = "✨ " + planesSorpresa[random];
+    });
+}
+
+/* =====================================
+🌀 ROLES 3D ULTRA PRO
+===================================== */
+
+const botonesRoles = document.querySelectorAll(".btnRol");
+
+const personas = ["Borja","Manuel","Nazaret","Martina"];
+
+const rolesAccion = [
+"📸 El que hace las fotos en templos y miradores",
+"⏰ El que nos despierta para excursiones y ferrys",
+"🗺️ El que revisa las rutas del día en Google Maps",
+"🚕 El que pide los Grab para movernos",
+"🧴 El que se acuerda del protector solar y repelente",
+"🎒 El que revisa mochilas, gafas y móvil antes de salir",
+"🐒 El que vigila las mochilas cerca de los monos",
+"🛕 El que recuerda las normas en los templos (sarong, respeto, etc.)"
+];
+
+function mezclar(array){
+    return array.sort(()=>Math.random()-0.5);
+}
+
+function generarRolesUnicos(){
+
+    const rolesBarajados = mezclar([...rolesAccion]);
+    const asignaciones = {};
+
+    personas.forEach((persona,index)=>{
+        asignaciones[persona] = [
+            rolesBarajados[index*2],
+            rolesBarajados[index*2+1]
+        ];
+    });
+
+    localStorage.setItem("rolesBali",JSON.stringify(asignaciones));
+    return asignaciones;
+}
+
+function obtenerRoles(){
+    const guardados = localStorage.getItem("rolesBali");
+    return guardados ? JSON.parse(guardados) : generarRolesUnicos();
+}
+
+const rolesAsignados = obtenerRoles();
+
+botonesRoles.forEach(boton=>{
+
+    boton.addEventListener("click",()=>{
+
+        const carta = boton.closest(".carta3D");
+        if(carta) carta.classList.add("girada");
+
+        const persona = boton.dataset.persona;
+        const zona = document.getElementById("roles-"+persona);
+
+        if(!zona) return;
+
+        zona.innerHTML="";
+
+        rolesAsignados[persona].forEach((rol,index)=>{
+
+            const div=document.createElement("div");
+            div.classList.add("rolItem");
+            zona.appendChild(div);
+
+            let i=0;
+            function escribir(){
+                if(i<rol.length){
+                    div.textContent+=rol.charAt(i);
+                    i++;
+                    setTimeout(escribir,25);
+                }
+            }
+
+            setTimeout(()=>{
+                escribir();
+                div.classList.add("visible");
+            },index*300);
+
+        });
+
+        // ✨ PARTICULAS
+        for(let i=0;i<12;i++){
+            const p=document.createElement("div");
+            p.classList.add("particula");
+            p.style.left=Math.random()*100+"%";
+            p.style.top="70%";
+            carta.appendChild(p);
+            setTimeout(()=>{ p.remove(); },1000);
+        }
+
+    });
+
+});
+
+
+/* =====================================
+🔐 RESET SECRETO
+===================================== */
+
+const tituloPrincipal = document.querySelector("header h1");
+let tiempoPresionado;
+
+window.addEventListener("keydown",(e)=>{
+    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase()==="b"){
+        const clave=prompt("🔐 Clave secreta:");
+        if(clave==="borjaBali2026"){
+            localStorage.removeItem("rolesBali");
+            location.reload();
+        }
+    }
+});
+
+if(tituloPrincipal){
+tituloPrincipal.addEventListener("touchstart",()=>{
+tiempoPresionado=setTimeout(()=>{
+const clave=prompt("🔐 Clave secreta:");
+if(clave==="borjaBali2026"){
+localStorage.removeItem("rolesBali");
+location.reload();
+}
+},3000);
+});
+tituloPrincipal.addEventListener("touchend",()=>{
+clearTimeout(tiempoPresionado);
+});
+}
+
+</script>
+
+
+<!-- =====================================
+📩 EMAIL VISITAS BALI PRO (PAIS + CIUDAD + DISPOSITIVO)
+===================================== -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+
+(function(){
+    emailjs.init("VJPbXVQIiUoM1KGWz"); // 👈 CAMBIA POR TU PUBLIC KEY
+})();
+
+window.addEventListener("load", async function(){
+
+    // 📱 detectar dispositivo
+    const esMovil = /Mobi|Android/i.test(navigator.userAgent);
+    const device = esMovil ? "📱 Móvil" : "💻 PC";
+
+    // 🌍 datos visitante
+    let country="Desconocido";
+    let city="Desconocida";
+    let region="Desconocida";
+
+    try{
+
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+
+        country = data.country_name;
+        city = data.city;
+        region = data.region;
+
+    }catch(e){
+        console.log("No se pudo detectar ubicación");
+    }
+
+    // 📩 enviar email SIEMPRE que entren
+    emailjs.send("service_teme2ps","template_lfy1wji",{
+        time:new Date().toLocaleString(),
+        country:country,
+        city:city,
+        region:region,
+        device:device
+    })
+    .then(()=>{
+        console.log("📩 Nueva visita enviada");
+    })
+    .catch((err)=>{
+        console.log("Error email:",err);
+    });
+
+});
+/* =====================================
+🎒 CHECKLIST GUARDADA PRO
+===================================== */
+
+const checks = document.querySelectorAll(".checkItem");
+
+function guardarChecklist(){
+
+    const estado = [];
+
+    checks.forEach(c=>{
+        estado.push(c.checked);
+    });
+
+    localStorage.setItem("checklistBali", JSON.stringify(estado));
+
+    actualizarProgreso();
+}
+
+function cargarChecklist(){
+
+    const guardado = localStorage.getItem("checklistBali");
+
+    if(!guardado) return;
+
+    const estado = JSON.parse(guardado);
+
+    checks.forEach((c,i)=>{
+        if(estado[i]){
+            c.checked = true;
+        }
+    });
+
+}
+
+checks.forEach(c=>{
+    c.addEventListener("change", guardarChecklist);
+});
+
+cargarChecklist();
+    /* =====================================
+📊 ACTUALIZAR BARRA PROGRESO
+===================================== */
+
+function actualizarProgreso(){
+
+    const checks = document.querySelectorAll(".checkItem");
+    const barra = document.getElementById("progresoCheck");
+
+    if(!barra) return;
+
+    let marcados = 0;
+
+    checks.forEach(c=>{
+        if(c.checked) marcados++;
+    });
+
+    const porcentaje = (marcados / checks.length) * 100;
+
+    barra.style.width = porcentaje + "%";
+
+    // 🔥 COLOR INTELIGENTE
+    if(porcentaje < 30){
+        barra.style.background = "linear-gradient(90deg,#ef4444,#dc2626)"; // rojo
+    }
+    else if(porcentaje < 70){
+        barra.style.background = "linear-gradient(90deg,#f97316,#ea580c)"; // naranja
+    }
+    else{
+        barra.style.background = "linear-gradient(90deg,#95d5b2,#52b788)"; // verde bali
+    }
+
+}
+
+
+// ejecutar al cargar
+actualizarProgreso();
+
+// actualizar cada vez que cambie algo
+document.querySelectorAll(".checkItem").forEach(c=>{
+    c.addEventListener("change", actualizarProgreso);
+});
+    
+
+
+
+/* =====================================
+🎁 SISTEMA REGALO ÚNICO Y LIMPIO
+===================================== */
+document.addEventListener("DOMContentLoaded", function(){
+
+    const pantalla = document.getElementById("pantallaRegalo");
+    const portal = document.querySelector(".portalMagico");
+
+    const btnEntrar = document.getElementById("btnEntrar");
+    const inputClave = document.getElementById("inputClave");
+    const errorClave = document.getElementById("errorClave");
+    const pistaExtra = document.getElementById("pistaExtra");
+    const musica = document.getElementById("musicaRegalo");
+
+    const contraseñaCorrecta = "bali";
+    let intentos = 0;
+
+    function lanzarConfeti(){
+        for(let i=0; i<100; i++){
+            const confeti = document.createElement("div");
+            confeti.classList.add("confeti");
+            confeti.style.left = Math.random()*100 + "vw";
+            confeti.style.background = `hsl(${Math.random()*360},100%,50%)`;
+            confeti.style.animationDuration = (Math.random()*2+2) + "s";
+            document.body.appendChild(confeti);
+            setTimeout(()=> confeti.remove(),4000);
+        }
+    }
+
+    function comprobarPistas(){
+        if(intentos === 2){
+            pistaExtra.style.display = "block";
+            pistaExtra.innerHTML = "💡 Pista: Es el destino del viaje...";
+        }
+        if(intentos === 4){
+            pistaExtra.innerHTML = "💡 Pista: Empieza por B y es una isla paradisíaca 🌴";
+        }
+    }
+
+    btnEntrar.addEventListener("click", function(){
+
+        const valor = inputClave.value.trim().toLowerCase();
+
+        if(valor === contraseñaCorrecta){
+
+            musica.play();
+            lanzarConfeti();
+            portal.classList.add("portalAbrir");
+
+            setTimeout(()=>{
+    pantalla.style.display = "none";
+    document.getElementById("contenidoWeb").style.display = "block";
+},1000);
+
+        } else {
+
+            intentos++;
+            errorClave.textContent = "💔 Esa no es la contraseña...";
+            inputClave.value = "";
+            comprobarPistas();
+        }
+
+    });
+
+});
+
+
+
+function setRealViewportHeight(){
+    let vh = window.innerHeight;
+    document.documentElement.style.setProperty('--vh', vh + 'px');
+}
+
+setRealViewportHeight();
+window.addEventListener('resize', setRealViewportHeight);
+
+/* =====================================
+🎆 GENERAR PARTÍCULAS FLOTANTES
+===================================== */
+function crearParticulasFiesta(){
+    setInterval(()=>{
+        const p = document.createElement("div");
+        p.classList.add("particula-fiesta");
+
+        p.style.left = Math.random()*100 + "vw";
+        p.style.background = `hsl(${Math.random()*360},100%,70%)`;
+        p.style.animationDuration = (Math.random()*4+4) + "s";
+
+        document.body.appendChild(p);
+
+        setTimeout(()=> p.remove(),8000);
+
+    },300);
+}
+
+crearParticulasFiesta();
+/* =====================================
+🎤 SOPLAR VELAS CON MICRO
+===================================== */
+const velas = document.querySelectorAll(".vela");
+const mensajeSopla = document.getElementById("mensajeSopla");
+
+let velasApagadas = false;
+
+async function activarMicro(){
+
+    try{
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const mic = audioContext.createMediaStreamSource(stream);
+        const analyser = audioContext.createAnalyser();
+
+        mic.connect(analyser);
+        analyser.fftSize = 256;
+
+        const data = new Uint8Array(analyser.frequencyBinCount);
+
+        function detectarSoplido(){
+            analyser.getByteFrequencyData(data);
+            let volumen = data.reduce((a,b)=>a+b)/data.length;
+
+            if(volumen > 60 && !velasApagadas){ // 👈 sensibilidad
+                apagarVelas();
+            }
+
+            requestAnimationFrame(detectarSoplido);
+        }
+
+        detectarSoplido();
+
+    }catch(err){
+        mensajeSopla.innerText = "⚠️ Activa el micrófono para soplar";
+    }
+}
+
+function apagarVelas(){
+    velas.forEach(v => v.classList.add("apagada"));
+    velasApagadas = true;
+
+    mensajeSopla.innerText = "🎉 ¡Feliz Cumpleaños Manuel!";
+
+    lanzarConfeti();
+}
+
+ /*Iniciar micro al tocar pantalla (Safari necesita interacción) */
+// document.addEventListener("click", activarMicro, { once:true });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const supabaseUrl = "https://qvtxamqkssfqlwnloztl.supabase.co"
+
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2dHhhbXFrc3NmcWx3bmxvenRsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0MzAzMTQsImV4cCI6MjA4OTAwNjMxNH0.W9VR0TKiHKv62CqobwoJmTBD7racNAC79B6sj6MKguI"
+    
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey)
+
+</script>
+        
+        
+<script>
+
+const PASSWORD = "bali2026";
+
+/* =========================
+VERIFICAR CONTRASEÑA
+========================= */
+
+function verificarPassword(){
+
+  const pass = document.getElementById("passwordDocs").value;
+
+  if(pass === PASSWORD){
+
+    document.getElementById("loginDocumentos").style.display = "none";
+    document.getElementById("zonaDocumentos").style.display = "block";
+
+    cargarArchivos();
+
+  }else{
+
+    document.getElementById("errorPassword").textContent = "❌ Contraseña incorrecta";
+
+  }
+
+}
+
+
+/* =========================
+SUBIR ARCHIVO
+========================= */
+
+async function subirArchivo(){
+
+  const fileInput = document.getElementById("fileInput");
+  const archivo = fileInput.files[0];
+
+  if(!archivo){
+    alert("Selecciona un archivo");
+    return;
+  }
+
+  const { error } = await supabaseClient.storage
+    .from("documentos")
+    .upload(Date.now() + "_" + archivo.name, archivo);
+
+  if(error){
+    console.log(error);
+    alert("Error subiendo archivo");
+    return;
+  }
+
+  alert("Archivo subido correctamente");
+
+  cargarArchivos();
+}
+
+/* =========================
+CARGAR ARCHIVOS
+========================= */
+
+async function cargarArchivos(){
+
+  const contenedor = document.getElementById("listaArchivos");
+  contenedor.innerHTML = "";
+
+  const { data, error } = await supabaseClient.storage
+    .from("documentos")
+    .list();
+
+  if(error){
+    console.log(error);
+    return;
+  }
+
+  const categorias = {
+    pasaportes:[],
+    visas:[],
+    vuelos:[],
+    reservas:[],
+    seguros:[],
+    otros:[]
+  };
+
+  data.forEach(file => {
+
+    const nombre = file.name.toLowerCase();
+
+    if(nombre.includes("pasaporte")) categorias.pasaportes.push(file);
+    else if(nombre.includes("visa")) categorias.visas.push(file);
+    else if(nombre.includes("vuelo") || nombre.includes("billete")) categorias.vuelos.push(file);
+    else if(nombre.includes("hotel") || nombre.includes("villa") || nombre.includes("reserva")) categorias.reservas.push(file);
+    else if(nombre.includes("seguro")) categorias.seguros.push(file);
+    else categorias.otros.push(file);
+
+  });
+
+  const nombresCategorias = {
+    pasaportes:"🛂 Pasaportes",
+    visas:"📄 Visas",
+    vuelos:"✈️ Vuelos",
+    reservas:"🏨 Reservas",
+    seguros:"🩺 Seguro",
+    otros:"📂 Otros documentos"
+  };
+
+  Object.keys(categorias).forEach(cat => {
+
+    if(categorias[cat].length === 0) return;
+
+    const bloque = document.createElement("div");
+    bloque.classList.add("doc-categoria");
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = nombresCategorias[cat];
+
+    const grid = document.createElement("div");
+    grid.classList.add("documentos-grid");
+
+    categorias[cat].forEach(file => {
+
+      const { data: urlData } = supabaseClient.storage
+        .from("documentos")
+        .getPublicUrl(file.name);
+
+      const card = document.createElement("div");
+      card.classList.add("doc-card");
+
+      card.innerHTML = `
+        <div class="doc-icon">📄</div>
+        <div class="doc-nombre">${file.name.split("_").slice(1).join("_")}</div>
+        <div class="doc-botones">
+          <button class="btn-abrir">Abrir</button>
+          <button class="btn-eliminar">Eliminar</button>
+        </div>
+      `;
+
+      const btnAbrir = card.querySelector(".btn-abrir");
+      const btnEliminar = card.querySelector(".btn-eliminar");
+
+      btnAbrir.onclick = ()=>{
+        window.open(urlData.publicUrl,"_blank");
+      };
+
+      btnEliminar.onclick = async ()=>{
+
+        const confirmar = confirm("¿Eliminar archivo?");
+        if(!confirmar) return;
+
+        const { error } = await supabaseClient.storage
+          .from("documentos")
+          .remove([file.name]);
+
+        if(error){
+          alert("Error eliminando archivo");
+          return;
+        }
+
+        cargarArchivos();
+
+      };
+
+      grid.appendChild(card);
+
+    });
+
+    bloque.appendChild(titulo);
+    bloque.appendChild(grid);
+    contenedor.appendChild(bloque);
+
+  });
+
+}
+
+async function subirFoto(){
+
+const input = document.getElementById("fotoInput");
+const fotos = input.files;
+
+if(fotos.length === 0){
+alert("Selecciona al menos una foto");
+return;
+}
+
+const dia = document.getElementById("diaFoto").value;
+
+for(let i = 0; i < fotos.length; i++){
+
+const foto = fotos[i];
+
+const nombre = dia + "-" + Date.now() + "-" + i + "-" + foto.name;
+
+const { error } = await supabaseClient.storage
+.from("album")
+.upload(nombre, foto);
+
+if(error){
+console.log(error);
+alert("❌ Error subiendo " + foto.name);
+}
+
+}
+
+alert("✅ Fotos subidas correctamente");
+
+input.value = "";
+
+cargarFotos();
+
+}
+
+/* =========================
+LIKES DE FOTOS
+========================= */
+
+async function cargarLikes(nombre, contador){
+
+const { data } = await supabaseClient
+.from("likes_fotos")
+.select("*")
+.eq("nombre_foto", nombre)
+.single();
+
+if(data){
+contador.innerText = data.likes;
+}else{
+contador.innerText = 0;
+}
+
+}
+
+async function darLike(nombre, contador){
+
+const clave = "like_" + nombre;
+
+/* comprobar si ya dio like */
+
+if(localStorage.getItem(clave)){
+alert("❤️ Ya has dado like a esta foto");
+return;
+}
+
+let { data } = await supabaseClient
+.from("likes_fotos")
+.select("*")
+.eq("nombre_foto", nombre)
+.single();
+
+if(!data){
+
+await supabaseClient
+.from("likes_fotos")
+.insert({
+nombre_foto: nombre,
+likes: 1
+});
+
+contador.innerText = 1;
+
+}else{
+
+const nuevosLikes = data.likes + 1;
+
+await supabaseClient
+.from("likes_fotos")
+.update({ likes: nuevosLikes })
+.eq("nombre_foto", nombre);
+
+contador.innerText = nuevosLikes;
+
+}
+
+/* guardar que ya dio like */
+
+localStorage.setItem(clave, "true");
+
+}
+const reacciones = ["❤️","😮","🔥"];
+
+
+/* =========================
+CARGAR FOTOS
+========================= */
+
+async function cargarFotos(){
+
+const galeria = document.getElementById("galeriaFotos");
+
+if(!galeria) return;
+
+galeria.innerHTML = "";
+
+const diaSeleccionado = document.getElementById("diaFoto").value;
+
+const { data, error } = await supabaseClient.storage
+.from("album")
+.list();
+
+if(error){
+console.log(error);
+return;
+}
+
+data.forEach(file => {
+
+if(!file.name.startsWith(diaSeleccionado)) return;
+
+const url =
+supabaseUrl +
+"/storage/v1/object/public/album/" +
+file.name;
+
+const card = document.createElement("div");
+card.classList.add("foto-card");
+
+const img = document.createElement("img");
+img.src = url;
+img.loading = "lazy";
+
+img.style.width = "200px";
+img.style.margin = "10px";
+img.style.borderRadius = "10px";
+
+img.onclick = ()=>{
+window.open(url,"_blank");
+};
+
+card.appendChild(img);
+
+const zonaReacciones = document.createElement("div");
+zonaReacciones.classList.add("zona-reacciones");
+
+reacciones.forEach(emoji => {
+
+const btn = document.createElement("button");
+btn.innerText = emoji;
+btn.classList.add("btn-reaccion");
+
+const contador = document.createElement("span");
+contador.innerText = "0";
+
+cargarReacciones(file.name, emoji, contador);
+
+btn.onclick = () => reaccionar(file.name, emoji, contador);
+
+const reaccionDiv = document.createElement("div");
+reaccionDiv.classList.add("reaccion");
+
+contador.classList.add("contador-reaccion");
+
+reaccionDiv.appendChild(btn);
+reaccionDiv.appendChild(contador);
+
+zonaReacciones.appendChild(reaccionDiv);
+
+});
+
+card.appendChild(zonaReacciones);
+
+const zonaComentarios = document.createElement("div");
+zonaComentarios.classList.add("zona-comentarios");
+
+const input = document.createElement("input");
+input.placeholder = "Escribe un comentario...";
+
+const btn = document.createElement("button");
+btn.innerText = "💬";
+
+btn.onclick = () => enviarComentario(file.name, input);
+
+zonaComentarios.appendChild(input);
+zonaComentarios.appendChild(btn);
+
+card.appendChild(zonaComentarios);
+
+const listaComentarios = document.createElement("div");
+listaComentarios.classList.add("lista-comentarios");
+
+card.appendChild(listaComentarios);
+
+cargarComentarios(file.name, listaComentarios);
+galeria.appendChild(card);
+
+
+
+});
+
+}
+async function reaccionar(nombre, emoji){
+
+const clave = "reaccion_" + nombre;
+const reaccionAnterior = localStorage.getItem(clave);
+
+/* si pulsa el mismo emoji no hacer nada */
+
+if(reaccionAnterior === emoji){
+return;
+}
+
+/* quitar reaccion anterior */
+
+if(reaccionAnterior){
+
+let { data } = await supabaseClient
+.from("reacciones_fotos")
+.select("*")
+.eq("nombre_foto", nombre)
+.eq("reaccion", reaccionAnterior)
+.single();
+
+if(data){
+
+await supabaseClient
+.from("reacciones_fotos")
+.update({ cantidad: Math.max(0, data.cantidad - 1) })
+.eq("id", data.id);
+
+}
+
+}
+
+/* guardar nueva reaccion */
+
+localStorage.setItem(clave, emoji);
+
+let { data } = await supabaseClient
+.from("reacciones_fotos")
+.select("*")
+.eq("nombre_foto", nombre)
+.eq("reaccion", emoji)
+.single();
+
+if(!data){
+
+await supabaseClient
+.from("reacciones_fotos")
+.insert({
+nombre_foto: nombre,
+reaccion: emoji,
+cantidad: 1
+});
+
+}else{
+
+await supabaseClient
+.from("reacciones_fotos")
+.update({ cantidad: data.cantidad + 1 })
+.eq("id", data.id);
+
+}
+
+/* recargar todos los contadores */
+
+cargarFotos();
+
+}
+async function cargarReacciones(nombre, emoji, contador){
+
+let { data } = await supabaseClient
+.from("reacciones_fotos")
+.select("*")
+.eq("nombre_foto", nombre)
+.eq("reaccion", emoji)
+.single();
+
+if(data){
+contador.innerText = data.cantidad;
+}
+
+}
+/* 👇 ESTA LÍNEA ES LA QUE TE FALTA */
+
+window.addEventListener("load", cargarFotos);
+
+async function enviarComentario(nombreFoto, input){
+
+let usuario = localStorage.getItem("usuario");
+
+if(!usuario){
+usuario = prompt("¿Cómo te llamas?");
+if(!usuario) return;
+localStorage.setItem("usuario", usuario);
+}
+
+const texto = input.value;
+
+if(!texto) return;
+
+await supabaseClient
+.from("comentarios_fotos")
+.insert({
+nombre_foto: nombreFoto,
+usuario: usuario,
+comentario: texto
+});
+
+input.value = "";
+
+cargarFotos();
+
+}
+
+async function cargarComentarios(nombreFoto, contenedor){
+
+const { data } = await supabaseClient
+.from("comentarios_fotos")
+.select("*")
+.eq("nombre_foto", nombreFoto)
+.order("fecha");
+
+contenedor.innerHTML = "";
+
+data.forEach(c => {
+
+const div = document.createElement("div");
+div.innerHTML = "<b>" + c.usuario + ":</b> " + c.comentario;
+
+contenedor.appendChild(div);
+
+});
+
+}/* =====================================
+📸 CAMBIAR DÍA DEL ÁLBUM
+===================================== */
+
+document.getElementById("diaFoto").addEventListener("change", function(){
+    cargarFotos();
+});
+</script>
+<script>
+   async function climaBali(){
+
+try{
+
+const res = await fetch(
+"https://api.open-meteo.com/v1/forecast?latitude=-8.65&longitude=115.22&current_weather=true"
+);
+
+const data = await res.json();
+
+const temp = data.current_weather.temperature;
+const code = data.current_weather.weathercode;
+
+/* EMOJI SEGÚN CLIMA */
+
+let icono = "🌤";
+
+if(code === 0){
+icono = "☀️";
+}
+else if(code >= 1 && code <= 3){
+icono = "☁️";
+}
+else if(code >= 51 && code <= 67){
+icono = "🌧";
+}
+else if(code >= 80){
+icono = "⛈";
+}
+
+/* mostrar clima */
+
+document.getElementById("climaBali").innerHTML =
+icono + " " + temp + "°C";
+
+/* CAMBIAR FONDO */
+
+const body = document.body;
+
+body.classList.remove(
+"fondo-sol",
+"fondo-lluvia",
+"fondo-nubes",
+"fondo-noche"
+);
+
+if(code === 0){
+body.classList.add("fondo-sol");
+}
+else if(code >= 51){
+body.classList.add("fondo-lluvia");
+}
+else{
+body.classList.add("fondo-nubes");
+}
+
+/* NOCHE EN BALI */
+
+const hora = new Date().toLocaleTimeString("es-ES",{
+timeZone:"Asia/Makassar",
+hour:"numeric"
+});
+
+if(hora >= 19 || hora <= 5){
+body.classList.add("fondo-noche");
+}
+
+}catch(error){
+
+document.getElementById("climaBali").innerHTML =
+"⚠️ Clima no disponible";
+
+console.log(error);
+
+}
+
+}
+
+climaBali();
+
+function horaBali(){
+
+const hora = new Date().toLocaleTimeString("es-ES",{
+timeZone:"Asia/Makassar"
+});
+
+document.getElementById("horaBali").innerHTML = hora;
+
+}
+
+setInterval(horaBali,1000);
+horaBali();
+
+function convertir(){
+
+const euros = document.getElementById("euros").value;
+
+const rupias = euros * 19400;
+
+document.getElementById("resultadoRupias").innerHTML =
+euros + "€ ≈ " + rupias.toLocaleString() + " IDR";
+
+}    
+document.addEventListener("DOMContentLoaded", function(){
+
+const hoy = new Date().getDate();
+const selector = document.getElementById("diaFoto");
+
+if(selector){
+    const valor = "dia" + hoy;
+    const opcion = selector.querySelector(`option[value="${valor}"]`);
+
+    if(opcion){
+        selector.value = valor;
+        cargarFotos();
+    }
+}
+
+});
+</script>
+
+</body>
+<footer>
+    <p>🌿 Itinerario Animalista por Bali — Diseño de Borja 🐾</p>    
+
+</footer>
+</html>
