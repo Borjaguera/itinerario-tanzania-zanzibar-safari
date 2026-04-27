@@ -48,16 +48,15 @@
     <!-- AQUÍ EMPIEZA TODA TU WEB EXACTAMENTE COMO LA TENÍAS -->
     <!-- TÍTULO PRINCIPAL -->
     <header>
-        <h1>🌴 Mi Itinerario de Viaje a Bali</h1>
-    </header>
+    <h1>🦁 Mi Itinerario de Viaje a Tanzania</h1>
+</header>
 
+<section class="hero-bali">
 
-   <section class="hero-bali">
-
-    <h2>🐾 Bali Animalista 2026</h2>
+    <h2>🐾 Tanzania Salvaje 2026</h2>
 
     <p class="frase">
-        Una aventura creada con respeto por la naturaleza, los animales y la esencia salvaje de Bali.
+        Una aventura entre safaris, naturaleza salvaje y paisajes únicos de África.
     </p>
 
     <div class="creditos">
@@ -68,6 +67,8 @@
         <p class="companeros">
             🤍 En honor a quienes me acompañan en esta experiencia:
             <span>Manuel</span> ·
+            <span>Natalia</span> ·
+            <span>Iker</span> ·
             <span>Nazaret</span> ·
             <span>Martina</span>
         </p>
@@ -78,7 +79,7 @@
     
 <!-- ✈️ CUENTA ATRÁS VUELO -->
 <section class="contador-vuelo">
-    <h2>✈️ Cuenta atrás hacia Bali</h2>
+    <h2>✈️ Cuenta atrás hacia Tanzania</h2>
     <div class="zona-contador">
     <p id="contador">Calculando tiempo restante...</p>
     <span id="avion">✈️</span>
@@ -87,22 +88,22 @@
 </section> 
 <section class="info-bali">
 
-<h2>🌴 Información en Bali</h2>
+<h2>🌍 Información en Tanzania</h2>
 
 <div class="info-grid">
 
 <div class="info-card">
-<h3>🌤 Clima en Bali</h3>
+<h3>🌤 Clima en Tanzania</h3>
 <p id="climaBali">Cargando clima...</p>
 </div>
 
 <div class="info-card">
-<h3>🕒 Hora en Bali</h3>
+<h3>🕒 Hora en Tanzania</h3>
 <p id="horaBali">Cargando hora...</p>
 </div>
 
 <div class="info-card">
-<h3>💰 Conversor € → Rupias</h3>
+<h3>💰 Conversor € → Chelines</h3>
 
 <input type="number" id="euros" placeholder="Euros">
 
@@ -117,12 +118,12 @@
 </section>
 <section id="mapa-bali">
 
-<h2>🗺️ Mapa del viaje en Bali</h2>
+<h2>🗺️ Mapa del viaje en Tanzania</h2>
 
 <div class="contenedor-mapa">
 
 <iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d505145.0138639879!2d115.092!3d-8.4095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d1d0bfa1bcd%3A0x5030bfbca8300b0!2sBali%2C%20Indonesia!5e0!3m2!1ses!2ses!4v1700000000000"
+src="https://www.google.com/maps/place/Tanzania/@-6.2635785,24.3226869,5z/data=!3m1!4b1!4m6!3m5!1s0x184b51314869a111:0x885a17314bc1c430!8m2!3d-6.369028!4d34.888822!16zL20vMDdkemY?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D"
 loading="lazy"
 referrerpolicy="no-referrer-when-downgrade">
 </iframe>
@@ -1256,7 +1257,7 @@ window.addEventListener("scroll", () => {
 ===================================== */
 
 const contador = document.getElementById("contador");
-const fechaVuelo = new Date("March 17, 2026 14:20:00").getTime();
+const fechaVuelo = new Date("May 20, 2027 08:00:00").getTime();
 
 function actualizarContador(){
 
